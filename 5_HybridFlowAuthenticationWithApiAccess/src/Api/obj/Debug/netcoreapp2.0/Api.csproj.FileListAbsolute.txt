@@ -1,0 +1,11 @@
+C:\IdentityServerSamples\5_HybridFlowAuthenticationWithApiAccess\src\Api\bin\Debug\netcoreapp2.0\Api.deps.json
+C:\IdentityServerSamples\5_HybridFlowAuthenticationWithApiAccess\src\Api\bin\Debug\netcoreapp2.0\Api.runtimeconfig.json
+C:\IdentityServerSamples\5_HybridFlowAuthenticationWithApiAccess\src\Api\bin\Debug\netcoreapp2.0\Api.runtimeconfig.dev.json
+C:\IdentityServerSamples\5_HybridFlowAuthenticationWithApiAccess\src\Api\bin\Debug\netcoreapp2.0\Api.dll
+C:\IdentityServerSamples\5_HybridFlowAuthenticationWithApiAccess\src\Api\bin\Debug\netcoreapp2.0\Api.pdb
+C:\IdentityServerSamples\5_HybridFlowAuthenticationWithApiAccess\src\Api\obj\Debug\netcoreapp2.0\Api.csprojAssemblyReference.cache
+C:\IdentityServerSamples\5_HybridFlowAuthenticationWithApiAccess\src\Api\obj\Debug\netcoreapp2.0\Api.csproj.CoreCompileInputs.cache
+C:\IdentityServerSamples\5_HybridFlowAuthenticationWithApiAccess\src\Api\obj\Debug\netcoreapp2.0\Api.AssemblyInfoInputs.cache
+C:\IdentityServerSamples\5_HybridFlowAuthenticationWithApiAccess\src\Api\obj\Debug\netcoreapp2.0\Api.AssemblyInfo.cs
+C:\IdentityServerSamples\5_HybridFlowAuthenticationWithApiAccess\src\Api\obj\Debug\netcoreapp2.0\Api.dll
+C:\IdentityServerSamples\5_HybridFlowAuthenticationWithApiAccess\src\Api\obj\Debug\netcoreapp2.0\Api.pdb
