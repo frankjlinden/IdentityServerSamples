@@ -18,6 +18,10 @@ namespace QuickstartIdentityServer
             {
                 new IdentityResources.OpenId(),
                 new IdentityResources.Profile(),
+                new IdentityResource {
+                    Name = "ddsinfo",
+                    UserClaims = new List<string> { "role","region","pin" }
+                }
             };
         }
 
@@ -25,7 +29,7 @@ namespace QuickstartIdentityServer
         {
             return new List<ApiResource>
             {
-                new ApiResource("api1", "My API")
+                new ApiResource("api1", "My API",new List<string>{"role","region","pin"})
             };
         }
 
@@ -37,8 +41,8 @@ namespace QuickstartIdentityServer
             {
                 new Client
                 {
-                    ClientId = "-1",
-                    ClientName = "console_test_client",
+                    ClientId = "console_client",
+                    ClientName = "Console Client",
                     AllowedGrantTypes = GrantTypes.ClientCredentials,
 
                     ClientSecrets = 
@@ -53,25 +57,29 @@ namespace QuickstartIdentityServer
                 // OpenID Connect hybrid flow and client credentials client (MVC)
                 new Client
                 {
-                    ClientId = "-2",
-                    ClientName = "mvc_test_client",
+                    ClientId = "mvc_client",
+                    ClientName = "MVC Client Application",
                     AllowedGrantTypes = GrantTypes.HybridAndClientCredentials,
 
                     ClientSecrets = 
                     {
                         new Secret("secret".Sha256())
                     },
-
+                    
                     RedirectUris = { "http://localhost:5002/signin-oidc" },
                     PostLogoutRedirectUris = { "http://localhost:5002/signout-callback-oidc" },
 
+
+                 //If we set AlwaysIncludeUserClaimsInIdToken, the custom profile service will add custom claims at login
+                  AlwaysIncludeUserClaimsInIdToken = true,
                     AllowedScopes = 
                     {
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
-                        "api1"
+                        "api1",
+                        "ddsinfo"
                     },
-
+                    
                     AllowOfflineAccess = true
                 }
             };
@@ -89,8 +97,9 @@ namespace QuickstartIdentityServer
 
                     Claims = new List<Claim>
                     {
-                        new Claim("name", "Alice"),
-                        new Claim("website", "https://alice.com")
+                        new Claim("role", "MVC.Admin.CO"),
+                        new Claim("region","CO"),
+                        new Claim("pin","0")
                     }
                 },
                 new TestUser
@@ -101,8 +110,9 @@ namespace QuickstartIdentityServer
 
                     Claims = new List<Claim>
                     {
-                        new Claim("name", "Bob"),
-                        new Claim("website", "https://bob.com")
+                        new Claim("role", "MVC.Admin.NE"),
+                        new Claim("region","NE"),
+                        new Claim("pin","0")
                     }
                 }
             };

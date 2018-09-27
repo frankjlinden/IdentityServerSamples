@@ -19,7 +19,7 @@ namespace MvcClient.Controllers
         public IActionResult Secure()
         {
             ViewData["Message"] = "Secure page.";
-
+           
             return View();
         }
 
@@ -36,7 +36,7 @@ namespace MvcClient.Controllers
 
         public async Task<IActionResult> CallApiUsingClientCredentials()
         {
-            var tokenClient = new TokenClient("http://localhost:5000/connect/token", "-2", "secret");
+            var tokenClient = new TokenClient("http://localhost:5000/connect/token", "mvc_client", "secret");
             var tokenResponse = await tokenClient.RequestClientCredentialsAsync("api1");
 
             var client = new HttpClient();
