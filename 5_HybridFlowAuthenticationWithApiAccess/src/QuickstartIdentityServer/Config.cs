@@ -29,7 +29,8 @@ namespace QuickstartIdentityServer
         {
             return new List<ApiResource>
             {
-                new ApiResource("api1", "My API",new List<string>{"role","region","pin"})
+                new ApiResource("api1", "External API",new List<string>{"role","region","pin"}),
+                 new ApiResource("iapi", "Internal API",new List<string>{"role","region","pin"})
             };
         }
 
@@ -52,7 +53,22 @@ namespace QuickstartIdentityServer
                     AllowedScopes = { "api1" }
                 },
 
-                
+                new Client
+                {
+                    ClientId = "iapi_client",
+                    ClientName = "External API",
+                    AllowedGrantTypes = {"delegation" },
+
+                    ClientSecrets =
+                    {
+                        new Secret("secret".Sha256())
+                    },
+                    AllowedScopes = new List<string>
+                    {
+                        "iapi"
+                    }
+                },
+
 
                 // OpenID Connect hybrid flow and client credentials client (MVC)
                 new Client

@@ -4,17 +4,57 @@
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
+using System.Net.Http;
+using Newtonsoft.Json.Linq;
+using Microsoft.AspNetCore.Authentication;
+using System.Threading.Tasks;
+using IdentityModel.Client;
+using System;
 
 namespace Api.Controllers
 {
     [Route("[controller]")]
     [Authorize]
-    public class IdentityController : ControllerBase
+    public class IdentityController : Controller
     {
         [HttpGet]
-        public IActionResult Get()
+        public async System.Threading.Tasks.Task<IActionResult> GetAsync()
         {
-            return new JsonResult(from c in User.Claims select new { c.Type, c.Value });
+            var accessToken = await HttpContext.GetTokenAsync("access_token");
+
+            //turn access token into Delegate Token
+            var tokenResponse = await DelegateAsync(accessToken);
+
+            
+            var client = new HttpClient();
+            client.SetBearerToken(tokenResponse.AccessToken);
+            var content = await client.GetStringAsync("http://localhost:5001/identity");
+
+            ViewBag.Json = JArray.Parse(content).ToString();
+            return View("Json");
+        }
+
+
+        public async Task<TokenResponse> DelegateAsync(string userToken)
+        {
+            // discover endpoints from metadata
+            var disco = await DiscoveryClient.GetAsync("http://localhost:5000");
+            if (disco.IsError)
+            {
+                Console.WriteLine(disco.Error);
+                // return ; //TODO Fix Return
+            }
+
+            var payload = new
+            {
+                token = userToken
+            };
+
+            // create token client
+            var client = new TokenClient(disco.TokenEndpoint, "iapi_client", "secret");
+
+            // send custom grant to token endpoint, return response
+            return await client.RequestCustomGrantAsync("delegation", "iapi", payload);
         }
     }
 }

@@ -53,7 +53,7 @@ namespace MvcClient.Controllers
 
             var client = new HttpClient();
             client.SetBearerToken(accessToken);
-            var content = await client.GetStringAsync("http://localhost:5001/identity");
+            var content = await client.GetStringAsync("http://localhost:5003/identity");
 
             ViewBag.Json = JArray.Parse(content).ToString();
             return View("Json");

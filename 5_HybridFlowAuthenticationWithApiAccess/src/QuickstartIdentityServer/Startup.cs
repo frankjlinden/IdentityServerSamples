@@ -3,6 +3,7 @@
 
 using IdentityServer4;
 using IdentityServer4.Services;
+using IdentityServer4.Validation;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
@@ -16,6 +17,8 @@ namespace QuickstartIdentityServer
         {
             services.AddMvc();
             //
+            services.AddSingleton<IExtensionGrantValidator, DelegationGrantValidator>();
+
             services.AddSingleton<IProfileService, ProfileService>();
             // configure identity server with in-memory stores, keys, clients and scopes
             services.AddIdentityServer()
