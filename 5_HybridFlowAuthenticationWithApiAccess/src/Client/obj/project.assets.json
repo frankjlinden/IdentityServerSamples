@@ -3594,23 +3594,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\LindenF\\.nuget\\packages\\": {},
+    "C:\\Users\\frank\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\IdentityServerSamples\\5_HybridFlowAuthenticationWithApiAccess\\src\\Client\\Client.csproj",
+      "projectUniqueName": "G:\\IdentityServerSamples\\5_HybridFlowAuthenticationWithApiAccess\\src\\Client\\Client.csproj",
       "projectName": "Client",
-      "projectPath": "C:\\IdentityServerSamples\\5_HybridFlowAuthenticationWithApiAccess\\src\\Client\\Client.csproj",
-      "packagesPath": "C:\\Users\\LindenF\\.nuget\\packages\\",
-      "outputPath": "C:\\IdentityServerSamples\\5_HybridFlowAuthenticationWithApiAccess\\src\\Client\\obj\\",
+      "projectPath": "G:\\IdentityServerSamples\\5_HybridFlowAuthenticationWithApiAccess\\src\\Client\\Client.csproj",
+      "packagesPath": "C:\\Users\\frank\\.nuget\\packages\\",
+      "outputPath": "G:\\IdentityServerSamples\\5_HybridFlowAuthenticationWithApiAccess\\src\\Client\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\LindenF\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\frank\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 18.1.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3618,7 +3619,9 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "G:\\Program Files (x86)\\DevExpress 18.1\\Components\\System\\Components\\Packages": {},
+        "https://api.nuget.org/v3/index.json": {},
+        "https://nuget.telerik.com/nuget": {}
       },
       "frameworks": {
         "netcoreapp2.0": {

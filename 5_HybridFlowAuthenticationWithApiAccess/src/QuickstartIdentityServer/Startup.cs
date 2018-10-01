@@ -17,7 +17,6 @@ namespace QuickstartIdentityServer
         {
             services.AddMvc();
             //
-            services.AddSingleton<IExtensionGrantValidator, DelegationGrantValidator>();
 
             services.AddSingleton<IProfileService, ProfileService>();
             // configure identity server with in-memory stores, keys, clients and scopes
@@ -27,7 +26,8 @@ namespace QuickstartIdentityServer
                 .AddInMemoryApiResources(Config.GetApiResources())
                 .AddInMemoryClients(Config.GetClients())
                 .AddTestUsers(Config.GetUsers())
-                .AddProfileService<ProfileService>();
+                .AddProfileService<ProfileService>()
+                .AddExtensionGrantValidator<DelegationGrantValidator>();
 
             services.AddAuthentication()
                 .AddGoogle("Google", options =>

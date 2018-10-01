@@ -41,7 +41,7 @@ namespace MvcClient.Controllers
 
             var client = new HttpClient();
             client.SetBearerToken(tokenResponse.AccessToken);
-            var content = await client.GetStringAsync("http://localhost:5001/identity");
+            var content = await client.GetStringAsync("http://localhost:5003/identity");
 
             ViewBag.Json = JArray.Parse(content).ToString();
             return View("Json");
@@ -49,6 +49,7 @@ namespace MvcClient.Controllers
 
         public async Task<IActionResult> CallApiUsingUserAccessToken()
         {
+            //TODO not authorized
             var accessToken = await HttpContext.GetTokenAsync("access_token");
 
             var client = new HttpClient();

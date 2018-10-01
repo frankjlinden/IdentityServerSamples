@@ -9,3 +9,14 @@ C:\IdentityServerSamples\5_HybridFlowAuthenticationWithApiAccess\src\MvcClient\o
 C:\IdentityServerSamples\5_HybridFlowAuthenticationWithApiAccess\src\MvcClient\obj\Debug\netcoreapp2.0\MvcClient.AssemblyInfo.cs
 C:\IdentityServerSamples\5_HybridFlowAuthenticationWithApiAccess\src\MvcClient\obj\Debug\netcoreapp2.0\MvcClient.dll
 C:\IdentityServerSamples\5_HybridFlowAuthenticationWithApiAccess\src\MvcClient\obj\Debug\netcoreapp2.0\MvcClient.pdb
+G:\IdentityServerSamples\5_HybridFlowAuthenticationWithApiAccess\src\MvcClient\bin\Debug\netcoreapp2.0\MvcClient.deps.json
+G:\IdentityServerSamples\5_HybridFlowAuthenticationWithApiAccess\src\MvcClient\bin\Debug\netcoreapp2.0\MvcClient.runtimeconfig.json
+G:\IdentityServerSamples\5_HybridFlowAuthenticationWithApiAccess\src\MvcClient\bin\Debug\netcoreapp2.0\MvcClient.runtimeconfig.dev.json
+G:\IdentityServerSamples\5_HybridFlowAuthenticationWithApiAccess\src\MvcClient\bin\Debug\netcoreapp2.0\MvcClient.dll
+G:\IdentityServerSamples\5_HybridFlowAuthenticationWithApiAccess\src\MvcClient\bin\Debug\netcoreapp2.0\MvcClient.pdb
+G:\IdentityServerSamples\5_HybridFlowAuthenticationWithApiAccess\src\MvcClient\obj\Debug\netcoreapp2.0\MvcClient.csprojAssemblyReference.cache
+G:\IdentityServerSamples\5_HybridFlowAuthenticationWithApiAccess\src\MvcClient\obj\Debug\netcoreapp2.0\MvcClient.csproj.CoreCompileInputs.cache
+G:\IdentityServerSamples\5_HybridFlowAuthenticationWithApiAccess\src\MvcClient\obj\Debug\netcoreapp2.0\MvcClient.AssemblyInfoInputs.cache
+G:\IdentityServerSamples\5_HybridFlowAuthenticationWithApiAccess\src\MvcClient\obj\Debug\netcoreapp2.0\MvcClient.AssemblyInfo.cs
+G:\IdentityServerSamples\5_HybridFlowAuthenticationWithApiAccess\src\MvcClient\obj\Debug\netcoreapp2.0\MvcClient.dll
+G:\IdentityServerSamples\5_HybridFlowAuthenticationWithApiAccess\src\MvcClient\obj\Debug\netcoreapp2.0\MvcClient.pdb

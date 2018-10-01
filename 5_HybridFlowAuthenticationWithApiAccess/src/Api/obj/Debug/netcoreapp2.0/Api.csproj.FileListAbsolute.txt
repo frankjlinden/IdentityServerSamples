@@ -9,3 +9,14 @@ C:\IdentityServerSamples\5_HybridFlowAuthenticationWithApiAccess\src\Api\obj\Deb
 C:\IdentityServerSamples\5_HybridFlowAuthenticationWithApiAccess\src\Api\obj\Debug\netcoreapp2.0\Api.dll
 C:\IdentityServerSamples\5_HybridFlowAuthenticationWithApiAccess\src\Api\obj\Debug\netcoreapp2.0\Api.pdb
 C:\IdentityServerSamples\5_HybridFlowAuthenticationWithApiAccess\src\Api\obj\Debug\netcoreapp2.0\Api.csprojAssemblyReference.cache
+G:\IdentityServerSamples\5_HybridFlowAuthenticationWithApiAccess\src\Api\bin\Debug\netcoreapp2.0\Api.deps.json
+G:\IdentityServerSamples\5_HybridFlowAuthenticationWithApiAccess\src\Api\bin\Debug\netcoreapp2.0\Api.runtimeconfig.json
+G:\IdentityServerSamples\5_HybridFlowAuthenticationWithApiAccess\src\Api\bin\Debug\netcoreapp2.0\Api.runtimeconfig.dev.json
+G:\IdentityServerSamples\5_HybridFlowAuthenticationWithApiAccess\src\Api\bin\Debug\netcoreapp2.0\Api.dll
+G:\IdentityServerSamples\5_HybridFlowAuthenticationWithApiAccess\src\Api\bin\Debug\netcoreapp2.0\Api.pdb
+G:\IdentityServerSamples\5_HybridFlowAuthenticationWithApiAccess\src\Api\obj\Debug\netcoreapp2.0\Api.csprojAssemblyReference.cache
+G:\IdentityServerSamples\5_HybridFlowAuthenticationWithApiAccess\src\Api\obj\Debug\netcoreapp2.0\Api.csproj.CoreCompileInputs.cache
+G:\IdentityServerSamples\5_HybridFlowAuthenticationWithApiAccess\src\Api\obj\Debug\netcoreapp2.0\Api.AssemblyInfoInputs.cache
+G:\IdentityServerSamples\5_HybridFlowAuthenticationWithApiAccess\src\Api\obj\Debug\netcoreapp2.0\Api.AssemblyInfo.cs
+G:\IdentityServerSamples\5_HybridFlowAuthenticationWithApiAccess\src\Api\obj\Debug\netcoreapp2.0\Api.dll
+G:\IdentityServerSamples\5_HybridFlowAuthenticationWithApiAccess\src\Api\obj\Debug\netcoreapp2.0\Api.pdb

@@ -20,14 +20,18 @@ namespace Api.Controllers
         [HttpGet]
         public async System.Threading.Tasks.Task<IActionResult> GetAsync()
         {
-            var accessToken = await HttpContext.GetTokenAsync("access_token");
+            // Get User Token - required to request delegate token for Internal API
+     
+             var token = await HttpContext.GetTokenAsync("access_token");
 
-            //turn access token into Delegate Token
-            var tokenResponse = await DelegateAsync(accessToken);
-
+            // exchange user token for delegate token
+            var delTokenResponse = await DelegateAsync(token);
             
+            //call internal api using delegate token
             var client = new HttpClient();
-            client.SetBearerToken(tokenResponse.AccessToken);
+            client.SetBearerToken(delTokenResponse.AccessToken);
+
+
             var content = await client.GetStringAsync("http://localhost:5001/identity");
 
             ViewBag.Json = JArray.Parse(content).ToString();
