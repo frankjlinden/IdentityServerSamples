@@ -26,14 +26,16 @@ namespace QuickstartIdentityServer
             IList<Claim> userClaims = new List<Claim>();
             // Add test email claim
             //TODO Change to User Manager Query?? look at Plurasight user example
+
+            // Check to see if Email has already been issued??
+            // add email claim if not present??
             Claim email = new Claim(JwtClaimTypes.Email, "Bob@Bob.com");
-            // 
-            if (email != null)
+            // context.IssuedClaims.Add(email);
+
+
+            if (context.Subject != null)
             {
                 context.IssuedClaims.Add(email);
-                // Add role claim specific to this App and User
-               // context.IssuedClaims.Add(new Claim(JwtClaimTypes.Role, $"{context.Client.ClientId}.Admin.CO"));
-
                 var call_path = context.Subject.FindFirst("call_path");
                 if (call_path != null)
                     context.IssuedClaims.Add(call_path);

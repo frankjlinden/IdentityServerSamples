@@ -19,10 +19,9 @@ namespace QuickstartIdentityServer
             {
                 new IdentityResources.OpenId(),
                 new IdentityResources.Profile(),
-                new IdentityResources.Email(),
                 new IdentityResource {
                     Name = "ddsinfo",
-                    UserClaims = new List<string> { "role","region","pin","call_path" }
+                    UserClaims = new List<string> { "email","role","region","pin","call_path" }
                 }
             };
         }
@@ -31,8 +30,8 @@ namespace QuickstartIdentityServer
         {
             return new List<ApiResource>
             {
-                new ApiResource("api1", "External API",new List<string>{JwtClaimTypes.Email,"region","pin","call_path"}),
-                new ApiResource("iapi", "Internal API",new List<string>{JwtClaimTypes.Email,"region","pin","call_path"})
+                new ApiResource("api1", "External API",new List<string>{"email","region","pin","call_path"}),
+                new ApiResource("iapi", "Internal API",new List<string>{"email","region","pin","call_path"})
             };
         }
 
@@ -67,7 +66,7 @@ namespace QuickstartIdentityServer
                     },
                     AllowedScopes = new List<string>
                     {
-                        "iapi","ddsinfo","email"
+                        "iapi","ddsinfo"
                     }
                 },
 
@@ -95,8 +94,7 @@ namespace QuickstartIdentityServer
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
                         "api1",
-                        "ddsinfo",
-                        JwtClaimTypes.Email
+                        "ddsinfo"
                     },
                     
                     AllowOfflineAccess = true
