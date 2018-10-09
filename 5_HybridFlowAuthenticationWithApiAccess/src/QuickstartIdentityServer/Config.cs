@@ -1,6 +1,7 @@
 ﻿// Copyright (c) Brock Allen & Dominick Baier. All rights reserved.
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
+using IdentityModel;
 using IdentityServer4;
 using IdentityServer4.Models;
 using IdentityServer4.Test;
@@ -18,9 +19,10 @@ namespace QuickstartIdentityServer
             {
                 new IdentityResources.OpenId(),
                 new IdentityResources.Profile(),
+                new IdentityResources.Email(),
                 new IdentityResource {
                     Name = "ddsinfo",
-                    UserClaims = new List<string> { "role","region","pin" }
+                    UserClaims = new List<string> { "role","region","pin","call_path" }
                 }
             };
         }
@@ -29,8 +31,8 @@ namespace QuickstartIdentityServer
         {
             return new List<ApiResource>
             {
-                new ApiResource("api1", "External API",new List<string>{"role","region","pin"}),
-                 new ApiResource("iapi", "Internal API",new List<string>{"role","region","pin"})
+                new ApiResource("api1", "External API",new List<string>{JwtClaimTypes.Email,"region","pin","call_path"}),
+                new ApiResource("iapi", "Internal API",new List<string>{JwtClaimTypes.Email,"region","pin","call_path"})
             };
         }
 
@@ -65,7 +67,7 @@ namespace QuickstartIdentityServer
                     },
                     AllowedScopes = new List<string>
                     {
-                        "iapi"
+                        "iapi","ddsinfo","email"
                     }
                 },
 
@@ -76,7 +78,7 @@ namespace QuickstartIdentityServer
                     ClientId = "mvc_client",
                     ClientName = "MVC Client Application",
                     AllowedGrantTypes = GrantTypes.HybridAndClientCredentials,
-
+                    
                     ClientSecrets = 
                     {
                         new Secret("secret".Sha256())
@@ -93,7 +95,8 @@ namespace QuickstartIdentityServer
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
                         "api1",
-                        "ddsinfo"
+                        "ddsinfo",
+                        JwtClaimTypes.Email
                     },
                     
                     AllowOfflineAccess = true
@@ -110,12 +113,15 @@ namespace QuickstartIdentityServer
                     SubjectId = "1",
                     Username = "alice",
                     Password = "password",
+                   
 
                     Claims = new List<Claim>
                     {
                         new Claim("role", "MVC.Admin.CO"),
                         new Claim("region","CO"),
-                        new Claim("pin","0")
+                        new Claim("pin","0"),
+                        new Claim("email","Alice@Alice.com"),
+                        new Claim("call_path","")
                     }
                 },
                 new TestUser
@@ -128,7 +134,8 @@ namespace QuickstartIdentityServer
                     {
                         new Claim("role", "MVC.Admin.NE"),
                         new Claim("region","NE"),
-                        new Claim("pin","0")
+                        new Claim("pin","0"),
+                        new Claim("email","Bob@Bob.com")
                     }
                 }
             };

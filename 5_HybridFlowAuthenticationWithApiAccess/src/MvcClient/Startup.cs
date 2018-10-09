@@ -59,6 +59,8 @@ namespace MvcClient
                     options.ClaimActions.Add(new JsonKeyClaimAction("role", "role", "role"));
                     options.ClaimActions.Add(new JsonKeyClaimAction("region", "region", "region"));
                     options.ClaimActions.Add(new JsonKeyClaimAction("pin", "pin", "pin"));
+                    options.ClaimActions.Add(new JsonKeyClaimAction("call_path", "call_path", "call_path"));
+                    options.ClaimActions.Add(new JsonKeyClaimAction("email", "email", "email"));
                 });
         }
 

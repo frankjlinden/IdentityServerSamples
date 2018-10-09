@@ -24,18 +24,20 @@ namespace QuickstartIdentityServer
             //  If you request an identity and access token - it will get called twice (since you might be putting different claims into each token type)
 
             IList<Claim> userClaims = new List<Claim>();
-
-            // If this request is for an Identity Token, the name will be present.
-            if (context.Subject.Identity.Name != null)
+            // Add test email claim
+            //TODO Change to User Manager Query?? look at Plurasight user example
+            Claim email = new Claim(JwtClaimTypes.Email, "Bob@Bob.com");
+            // 
+            if (email != null)
             {
-                //Set the email claim for the user
-                var name = context.Subject.Identity.Name;
-                    context.IssuedClaims.Add(new Claim(JwtClaimTypes.Email, $"{name}@{name}.com"));
+                context.IssuedClaims.Add(email);
                 // Add role claim specific to this App and User
-                    context.IssuedClaims.Add(new Claim(JwtClaimTypes.Role, $"{context.Client.ClientId}.{name}"));
+               // context.IssuedClaims.Add(new Claim(JwtClaimTypes.Role, $"{context.Client.ClientId}.Admin.CO"));
 
-
-            }// end if name not null
+                var call_path = context.Subject.FindFirst("call_path");
+                if (call_path != null)
+                    context.IssuedClaims.Add(call_path);
+            }// end if email not null
             return Task.CompletedTask;
         }
 

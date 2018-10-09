@@ -20,6 +20,8 @@ namespace Api.Controllers
         [HttpGet]
         public async System.Threading.Tasks.Task<IActionResult> GetAsync()
         {
+            //SBTODO add authorization here
+            
             // Get User Token - required to request delegate token for Internal API
      
              var token = await HttpContext.GetTokenAsync("access_token");
@@ -34,8 +36,10 @@ namespace Api.Controllers
 
             var content = await client.GetStringAsync("http://localhost:5001/identity");
 
-            ViewBag.Json = JArray.Parse(content).ToString();
-            return View("Json");
+            var Json = JArray.Parse(content);
+
+            return new JsonResult(Json);
+
         }
 
 
